@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Form from '../components/Form';
 
 const CreateEmployee = () => {
   return (
-    <div>
+    <HelmetProvider>
+      <Helmet>
+        <title>HRnet</title>
+      </Helmet>
       <div className="title">
         <h1>HRnet</h1>
       </div>
@@ -16,7 +20,7 @@ const CreateEmployee = () => {
       <div id="confirmation" class="modal" hidden>
         Employee Created!
       </div>
-    </div>
+    </HelmetProvider>
   );
 };
 

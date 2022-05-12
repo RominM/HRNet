@@ -1,5 +1,3 @@
-// import './styles/App.css';
-
 import { Route, Routes } from 'react-router-dom';
 import CreateEmployee from './pages/CreateEmployee';
 import EmployeeList from './pages/EmployeeList';
