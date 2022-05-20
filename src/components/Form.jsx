@@ -2,6 +2,9 @@ import React from 'react';
 import Select from './Select';
 
 const Form = () => {
+   const saveEmployee = (e) => {
+      e.preventDefault();
+   };
    return (
       <div>
          <form action="#" id="create-employee">
@@ -10,38 +13,35 @@ const Form = () => {
                <div className="inputs">
                   <label htmlFor="first-name">First Name</label>
                   <input type="text" id="first-name" />
-
                   <label htmlFor="last-name">Last Name</label>
                   <input type="text" id="last-name" />
-
                   <label htmlFor="date-of-birth">Date of Birth</label>
                   <input id="date-of-birth" type="text" />
-
                   <label htmlFor="start-date">Start Date</label>
                   <input id="start-date" type="text" />
                </div>
             </fieldset>
 
-            <fieldset class="address right-part">
+            <fieldset className="address right-part">
                <legend>Address</legend>
                <div className="inputs">
-                  <label for="street">Street</label>
+                  <label htmlFor="street">Street</label>
                   <input id="street" type="text" />
 
-                  <label for="city">City</label>
+                  <label htmlFor="city">City</label>
                   <input id="city" type="text" />
 
-                  <label for="state">State</label>
+                  <label htmlFor="state">State</label>
                   <select name="state" id="state"></select>
 
-                  <label for="zip-code">Zip Code</label>
+                  <label htmlFor="zip-code">Zip Code</label>
                   <input id="zip-code" type="number" />
 
-                  <label for="department">Department</label>
+                  <label htmlFor="department">Department</label>
                   <Select />
                </div>
             </fieldset>
-            <button onclick="saveEmployee()">Save</button>
+            <button onClick={(e) => saveEmployee}>Save</button>
          </form>
       </div>
    );
