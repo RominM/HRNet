@@ -5,17 +5,17 @@ form {
    fieldset {
       margin-top: 10px;
       border-radius: 7px;
-      // background: linear-gradient(110deg, $gradient_tow, $gradient_one);
+      border: none;
+      background: linear-gradient(110deg, $gradient_tow, $gradient_one);
       background-color: $white_color;
       width: 30%;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.661);
       legend {
          padding: 7px;
-         // border: solid 1px;
          border-radius: 7px;
-         // background: linear-gradient(110deg, $gradient_one, $gradient_tow);
-         // color: #fff;
-         background-color: $white_color;
+         background-color: rgba(255, 255, 255, 0.622);
+         box-shadow: 3px 3px 3px #000;
+         font-weight: bold;
       }
       .inputs {
          width: 85%;
