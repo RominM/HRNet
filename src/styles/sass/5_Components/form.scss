@@ -2,6 +2,7 @@ form {
    position: relative;
    display: flex;
    justify-content: space-around;
+   padding: 75px;
    fieldset {
       margin-top: 10px;
       border-radius: 7px;
@@ -10,6 +11,7 @@ form {
       background-color: $white_color;
       width: 30%;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.661);
+      padding: 50px;
       legend {
          padding: 7px;
          border-radius: 7px;
@@ -25,21 +27,25 @@ form {
          input {
             width: 100%;
             height: 25px;
+            font-size: 1.1rem;
          }
       }
    }
    button {
       cursor: pointer;
       position: absolute;
-      right: 0;
+      right: 5%;
       bottom: 0;
-      width: 110px;
-      height: 30px;
-      box-shadow: 3px 3px 3px #000;
-      transition: 0.7s;
-      border: none;
+      width: 150px;
+      height: 40px;
+      box-shadow: 3px 3px 3px #000, inset 0px 0px 0px;
+      transition: 0.3s;
+      font-size: 1.2rem;
+      background-color: #fff;
+      border-radius: 7px;
    }
    button:hover {
-      background-color: #fff;
+      // background-color: #fff;
+      box-shadow: 0px 0px 0px #000, inset 3px 3px 3px #000;
    }
 }

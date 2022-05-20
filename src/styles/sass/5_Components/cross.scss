@@ -1,0 +1,25 @@
+.modale {
+   position: relative;
+   width: 75%;
+   height: 150px;
+   line-height: 150px;
+   margin: auto;
+   border: solid 1px;
+   border-radius: 7px;
+   padding: 50px;
+   text-align: center;
+   font-size: 2rem;
+   box-shadow: 3px 3px 8px #000;
+   #x {
+      position: absolute;
+      border-radius: 100%;
+      padding: 4px 6px;
+      background: #000;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      top: -5px;
+      right: -5px;
+      cursor: pointer;
+   }
+}
