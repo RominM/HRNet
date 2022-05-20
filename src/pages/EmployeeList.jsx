@@ -8,7 +8,7 @@ const EmployeeList = () => {
          <Helmet>
             <title>HRnet - Current Employees</title>
          </Helmet>
-         <main id="employee-div" class="container">
+         <main id="employee-div" className="container">
             <section>
                <h1>Current Employees</h1>
                <Table />

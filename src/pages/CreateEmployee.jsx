@@ -12,9 +12,6 @@ const CreateEmployee = () => {
             <section>
                <h2>Create Employee</h2>
                <Form />
-               <div id="confirmation" className="modal" hidden>
-                  Employee Created!
-               </div>
             </section>
          </main>
       </HelmetProvider>

@@ -1,13 +1,24 @@
-import React from 'react';
-import Select from './Select';
+import React, { useState } from 'react';
+import { departements } from '../utils/departements';
+import { states } from '../utils/states';
 
 const Form = () => {
-   const saveEmployee = (e) => {
-      e.preventDefault();
-   };
-   return (
+   const [modale, setModale] = useState(false);
+
+   const saveEmployee = () => setModale(true);
+
+   const closeModale = () => setModale(false);
+
+   return modale ? (
+      <div className="modale">
+         <button id="x" onClick={closeModale}>
+            X
+         </button>
+         <span>Employee Created!</span>
+      </div>
+   ) : (
       <div>
-         <form action="#" id="create-employee">
+         <form action="POST" id="create-employee">
             <fieldset className="informations left-part">
                <legend>Informations</legend>
                <div className="inputs">
@@ -32,16 +43,26 @@ const Form = () => {
                   <input id="city" type="text" />
 
                   <label htmlFor="state">State</label>
-                  <select name="state" id="state"></select>
+                  <select name="" id="">
+                     {states.map((state) => (
+                        <option key={state.abbreviation}>{state.name}</option>
+                     ))}
+                  </select>
 
                   <label htmlFor="zip-code">Zip Code</label>
                   <input id="zip-code" type="number" />
 
                   <label htmlFor="department">Department</label>
-                  <Select />
+                  <select name="department" id="department">
+                     {departements.map((department) => (
+                        <option key={department}>{department}</option>
+                     ))}
+                  </select>
                </div>
             </fieldset>
-            <button onClick={(e) => saveEmployee}>Save</button>
+            <button type="button" onClick={saveEmployee}>
+               Save
+            </button>
          </form>
       </div>
    );
