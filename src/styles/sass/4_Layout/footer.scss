@@ -1,0 +1,17 @@
+footer {
+   position: absolute;
+   bottom: 0;
+   width: 100vw;
+   height: 50px;
+   // line-height: 50px;
+   border-top: solid 1px;
+   .copyright {
+      text-align: center;
+      img {
+         width: 17px;
+      }
+      span {
+         font-size: 1.3rem;
+      }
+   }
+}
