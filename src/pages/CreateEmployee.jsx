@@ -8,13 +8,15 @@ const CreateEmployee = () => {
          <Helmet>
             <title>HRnet</title>
          </Helmet>
-         <section className="container">
-            <h2>Create Employee</h2>
-            <Form />
-            <div id="confirmation" class="modal">
-               Employee Created!
-            </div>
-         </section>
+         <main className="container">
+            <section>
+               <h2>Create Employee</h2>
+               <Form />
+               <div id="confirmation" class="modal" hidden>
+                  Employee Created!
+               </div>
+            </section>
+         </main>
       </HelmetProvider>
    );
 };

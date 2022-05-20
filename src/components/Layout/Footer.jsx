@@ -1,5 +1,5 @@
 import React from 'react';
-import copyright from './../../assets/copyright-symbol-svgrepo-com.svg';
+import copyright from './../../assets/images/copyright-symbol-svgrepo-com.svg';
 
 const Footer = () => {
    return (

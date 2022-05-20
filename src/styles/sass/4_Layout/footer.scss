@@ -2,11 +2,12 @@ footer {
    position: absolute;
    bottom: 0;
    width: 100vw;
-   height: 50px;
-   // line-height: 50px;
-   border-top: solid 1px;
+   height: 75px;
+   background-color: #fff;
+   box-shadow: 0px -4px 10px #000;
    .copyright {
       text-align: center;
+      padding: 25px;
       img {
          width: 17px;
       }

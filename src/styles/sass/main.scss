@@ -4,7 +4,8 @@
 // @import 'vendors/bootstrap';
 
 // @import 'base/reset';
-// @import 'base/typography';
+@import './3_Bases/typography';
+@import './3_Bases/colors.scss';
 
 // @import 'layout/navigation';
 // @import 'layout/grid';
@@ -20,6 +21,7 @@
 // @import 'components/carousel';
 // @import 'components/cover';
 // @import 'components/dropdown';
+@import './5_Components/form.scss';
 
 // @import 'pages/home';
 // @import 'pages/contact';

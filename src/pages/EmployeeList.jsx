@@ -8,10 +8,12 @@ const EmployeeList = () => {
          <Helmet>
             <title>HRnet - Current Employees</title>
          </Helmet>
-         <section id="employee-div" class="container">
-            <h1>Current Employees</h1>
-            <Table />
-         </section>
+         <main id="employee-div" class="container">
+            <section>
+               <h1>Current Employees</h1>
+               <Table />
+            </section>
+         </main>
       </HelmetProvider>
    );
 };
