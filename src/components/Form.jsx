@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { departements } from '../utils/departements';
 import { states } from '../utils/states';
+import DatePicker from 'react-date-picker';
 
 const Form = () => {
+   const [birthValue, setBirthValue] = useState(new Date());
+   const [startValue, setStartValue] = useState(new Date());
+
    const [modale, setModale] = useState(false);
 
    const saveEmployee = () => setModale(true);
@@ -26,10 +30,22 @@ const Form = () => {
                   <input type="text" id="first-name" />
                   <label htmlFor="last-name">Last Name</label>
                   <input type="text" id="last-name" />
+
                   <label htmlFor="date-of-birth">Date of Birth</label>
-                  <input id="date-of-birth" type="text" />
+                  {/* <input id="date-of-birth" type="text" /> */}
+                  <DatePicker
+                     onChange={setBirthValue}
+                     value={birthValue}
+                     className="datepicker"
+                  />
+
                   <label htmlFor="start-date">Start Date</label>
-                  <input id="start-date" type="text" />
+                  {/* <input id="start-date" type="text" /> */}
+                  <DatePicker
+                     onChange={setStartValue}
+                     value={startValue}
+                     className="datepicker"
+                  />
                </div>
             </fieldset>
 
@@ -60,7 +76,7 @@ const Form = () => {
                   </select>
                </div>
             </fieldset>
-            <button type="button" onClick={saveEmployee}>
+            <button className='save-btn' type="button" onClick={saveEmployee}>
                Save
             </button>
          </form>

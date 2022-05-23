@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+   const [toggle, setToggle] = useState(false);
+
+   const navList = () => setToggle(true);
+   const navHome = () => setToggle(false);
+
    return (
       <header>
          <h1>HR Net</h1>
          <div className="links">
-            {/* {on home page ? */}
-            <Link to="/employee-list">View Current Employees</Link>
-            {/* : */}
-            <Link to="/">Home</Link>
-            {/* } */}
+            {toggle ? (
+               <Link to="/" id="path" onClick={navHome}>
+                  Home
+               </Link>
+            ) : (
+               <Link to="/employee-list" id="path" onClick={navList}>
+                  View Current Employees
+               </Link>
+            )}
          </div>
       </header>
    );
