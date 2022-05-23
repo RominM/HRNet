@@ -6,11 +6,13 @@ const CreateEmployee = () => {
    return (
       <HelmetProvider>
          <Helmet>
-            <title>HRnet</title>
+            <title>HRnet - Home</title>
          </Helmet>
          <main className="container">
             <section>
-               <h2>Create Employee</h2>
+               <div className="title">
+                  <h1>Create Employee</h1>
+               </div>
                <Form />
             </section>
          </main>

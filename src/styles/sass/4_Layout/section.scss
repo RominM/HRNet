@@ -13,5 +13,14 @@ main {
       background-color: #fff;
       border-radius: 7px;
       box-shadow: 3px 3px 10px #000;
+      .title {
+         display: inline;
+         h1 {
+            border-bottom: 2px solid #000;
+            align-items: flex-start;
+            font-size: 2rem;
+            font-style: italic;
+         }
+      }
    }
 }

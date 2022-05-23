@@ -10,7 +10,9 @@ const EmployeeList = () => {
          </Helmet>
          <main id="employee-div" className="container">
             <section>
-               <h1>Current Employees</h1>
+               <div className="title">
+                  <h1>Current Employees</h1>
+               </div>
                <Table />
             </section>
          </main>
