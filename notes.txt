@@ -1,0 +1,15 @@
+// DATEPICKER PLUGIN
+
+   - https://www.npmjs.com/package/react-date-picker
+
+   very low, popular, really good quality, god maintenance
+__________________________________________________________________
+
+// TABLE PLUGIN
+
+   - https://www.npmjs.com/package/react-table-plugins
+
+   extremly low, few dowloding but progressing, easey to use
+   __________________________________________________________________
+
+// DROPDOWN PLUGIN
