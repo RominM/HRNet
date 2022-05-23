@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { departements } from '../utils/departements';
+import { departements } from '../utils/departementsList';
 import { states } from '../utils/states';
 import DatePicker from 'react-date-picker';
 
