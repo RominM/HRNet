@@ -7,7 +7,7 @@ form {
       margin-top: 10px;
       border-radius: 7px;
       border: none;
-      background: linear-gradient(110deg, $gradient_tow, $gradient_one);
+      background: linear-gradient(110deg, $gradient_two, $gradient_one);
       background-color: $white_color;
       width: 30%;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.661);
@@ -31,21 +31,5 @@ form {
          }
       }
    }
-   button {
-      cursor: pointer;
-      position: absolute;
-      right: 5%;
-      bottom: 0;
-      width: 150px;
-      height: 40px;
-      box-shadow: 3px 3px 3px #000, inset 0px 0px 0px;
-      transition: 0.3s;
-      font-size: 1.2rem;
-      background-color: #fff;
-      border-radius: 7px;
-   }
-   button:hover {
-      // background-color: #fff;
-      box-shadow: 0px 0px 0px #000, inset 3px 3px 3px #000;
-   }
+
 }

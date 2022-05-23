@@ -6,15 +6,17 @@ header {
    background: linear-gradient(
       110deg,
       #fff 70%,
-      $gradient_tow 60%,
+      $gradient_two 60%,
       $gradient_one
    );
    h1 {
       margin: auto 50px;
       font-size: 2rem;
    }
-   .links {
+   #path {
       font-size: 1.3rem;
+      text-decoration: none;
+      color: #fff;
       margin: auto 50px;
    }
 }

@@ -13,13 +13,14 @@
    #x {
       position: absolute;
       border-radius: 100%;
-      padding: 4px 6px;
-      background: #000;
-      color: white;
+      border: solid 2px #000;
+      padding: 4px 8px;
+      background: #fff;
+      color: #000;
       font-size: 1.2rem;
       font-weight: bold;
-      top: -5px;
-      right: -5px;
+      top: -12px;
+      right: -12px;
       cursor: pointer;
    }
 }

@@ -1,0 +1,18 @@
+.save-btn {
+   cursor: pointer;
+   position: absolute;
+   right: 5%;
+   bottom: 0;
+   width: 150px;
+   height: 40px;
+   box-shadow: 3px 3px 3px $gradient_one, inset 0px 0px 0px $gradient_two;
+   transition: 0.3s;
+   font-size: 1.2rem;
+   background-color: #fff;
+   border: solid 1px $gradient_two;
+   border-radius: 7px;
+}
+.save-btn:hover {
+   // background-color: #fff;
+   box-shadow: 0px 0px 0px $gradient_two, inset 3px 3px 3px $gradient_one;
+}
