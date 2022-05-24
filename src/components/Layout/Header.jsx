@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+   // Handle Toggle
    const [toggle, setToggle] = useState(false);
-
    const navList = () => setToggle(true);
    const navHome = () => setToggle(false);
 

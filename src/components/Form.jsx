@@ -7,10 +7,9 @@ const Form = () => {
    const [birthValue, setBirthValue] = useState(new Date());
    const [startValue, setStartValue] = useState(new Date());
 
+   // Handle Modale
    const [modale, setModale] = useState(false);
-
    const saveEmployee = () => setModale(true);
-
    const closeModale = () => setModale(false);
 
    return modale ? (
@@ -32,7 +31,6 @@ const Form = () => {
                   <input type="text" id="last-name" />
 
                   <label htmlFor="date-of-birth">Date of Birth</label>
-                  {/* <input id="date-of-birth" type="text" /> */}
                   <DatePicker
                      onChange={setBirthValue}
                      value={birthValue}
@@ -40,7 +38,6 @@ const Form = () => {
                   />
 
                   <label htmlFor="start-date">Start Date</label>
-                  {/* <input id="start-date" type="text" /> */}
                   <DatePicker
                      onChange={setStartValue}
                      value={startValue}
@@ -76,7 +73,7 @@ const Form = () => {
                   </select>
                </div>
             </fieldset>
-            <button className='save-btn' type="button" onClick={saveEmployee}>
+            <button className="save-btn" type="button" onClick={saveEmployee}>
                Save
             </button>
          </form>
