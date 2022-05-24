@@ -1,0 +1,48 @@
+const exampleData = [
+   {
+      firstName: 'John',
+      lastName: 'Doe',
+      startDate: '04/14/2021',
+      department: 'Marketing',
+      dateOfBirth: '01/01/1990',
+      street: 'Main Street',
+      ville: 'NY',
+      état: 'AL',
+      zip: ' 01800 ',
+   },
+   {
+      firstName: 'Elisa',
+      nom: 'Tyrel',
+      startDate: '03/02/2020',
+      département: 'Marketing',
+      dateOfBirth: '01/25/1988',
+      rue: 'Helia Street',
+      ville: 'San Francisco',
+      état: 'AK',
+      zip: ' 85699 ',
+   },
+   {
+      firstName: 'Thomas',
+      nom: 'Anderson',
+      startDate: '05/09/1998',
+      département: 'Sales',
+      dateOfBirth: '  03/11/1962',
+      rue: 'Lower Downtown',
+      ville: 'NY',
+      état: 'NY',
+      zip: ' 0001 ',
+   },
+   {
+      firstName: 'Sirius',
+      nom: 'Black',
+      startDate: '05/09/1998',
+      département: 'Legal',
+      dateOfBirth: '  11/03/1959',
+      rue: 'London',
+      ville: 'Boston',
+      état: 'Connecticut',
+      zip: ' 0001 ',
+   },
+];
+
+export { exampleData };

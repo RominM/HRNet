@@ -3,13 +3,19 @@
    - https://www.npmjs.com/package/react-date-picker
 
    very low, popular, really good quality, god maintenance
+
+   { React Flatpickr look interessing ?? }
 __________________________________________________________________
 
 // TABLE PLUGIN
 
    - https://www.npmjs.com/package/react-table-plugins
 
-   extremly low, few dowloding but progressing, easey to use
+   very low, few dowloding but progressing, easey to use
+
+   - https://www.npmjs.com/package/datatables-plugin-react
+
+   extremly low, not popular at all but quit nice quality & maintance
    __________________________________________________________________
 
 // DROPDOWN PLUGIN
