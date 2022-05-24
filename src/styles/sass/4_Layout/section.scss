@@ -17,9 +17,14 @@ main {
          display: inline;
          h1 {
             border-bottom: 2px solid #000;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            padding-left: 25px;
+            padding-bottom: 5px;
             align-items: flex-start;
             font-size: 2rem;
             font-style: italic;
+            background-color: $white_color;
          }
       }
    }

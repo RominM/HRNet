@@ -1,0 +1,17 @@
+.dtb {
+   padding: 10px;
+   margin: auto;
+}
+
+.dtb-table-header-cell {
+   background-color: $gradient-one;
+   color: #fff;
+   font-weight: bold;
+}
+.dtb-table {
+   background-color: $gradient-two;
+}
+
+.dtb-table-row:nth-child(even) > td:first-child {
+   background-color: $gradient-two;
+}
