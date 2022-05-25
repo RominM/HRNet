@@ -1,14 +1,11 @@
-// @import 'abstracts/variables';
-// @import 'abstracts/mixins';
-
-@import './3_Bases/typography';
-@import './3_Bases/colors.scss';
-@import './4_Layout/bloc-page.scss';
-@import './4_layout/header';
-@import './4_Layout/section.scss';
-@import './4_layout/footer';
-@import './5_Components/form.scss';
-@import './5_Components/modale.scss';
-@import './5_Components/datepicker.scss';
-@import './5_Components/table.scss';
-@import './5_Components/button.scss';
+@import './Bases/typography';
+@import './Bases/colors.scss';
+@import './Layout/bloc-page.scss';
+@import './layout/header';
+@import './Layout/section.scss';
+@import './layout/footer';
+@import './Components/form.scss';
+@import './Components/modale.scss';
+@import './Components/datepicker.scss';
+@import './Components/table.scss';
+@import './Components/button.scss';

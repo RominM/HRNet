@@ -2,7 +2,9 @@ form {
    position: relative;
    display: flex;
    justify-content: space-around;
-   padding: 75px;
+   margin-top: 50px;
+   padding: 1%;
+   width: 90%;
    fieldset {
       margin-top: 10px;
       border-radius: 7px;
@@ -11,7 +13,7 @@ form {
       background-color: $white_color;
       width: 30%;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.661);
-      padding: 50px;
+      padding: 3%;
       legend {
          padding: 7px;
          border-radius: 7px;
@@ -31,5 +33,4 @@ form {
          }
       }
    }
-
 }
