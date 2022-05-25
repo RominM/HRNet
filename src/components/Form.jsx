@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import DatePicker from 'react-date-picker';
 import { departements } from '../utils/departementsList';
 import { statesUS } from '../utils/statesUS';
+import Modale from './Modale';
+import SaveButton from './SaveButton';
 
 const Form = () => {
+   const [isOpen, setIsOpen] = useState(false);
+   const text = 'Employee created !!';
+
    const [state, setState] = useState({
       firstName: '',
       lastName: '',
@@ -24,17 +29,20 @@ const Form = () => {
 
    const saveEmployee = (e) => {
       e.preventDefault();
-      const firstName = state.firstName;
-      const lastName = state.lastName;
-      const startDate = state.startDate;
-      const department = state.department;
-      const dateOfBirth = state.dateOfBirth;
-      const street = state.street;
-      const city = state.city;
-      const thisState = state.state;
-      const zipCode = state.zipCode;
+      // const firstName = state.firstName;
+      // const lastName = state.lastName;
+      // const startDate = state.startDate;
+      // const department = state.department;
+      // const dateOfBirth = state.dateOfBirth;
+      // const street = state.street;
+      // const city = state.city;
+      // const thisState = state.state;
+      // const zipCode = state.zipCode;
+
+      setIsOpen(true);
    };
-   console.log(state);
+
+   console.log('State : ', state);
 
    return (
       <form action="POST" id="create-employee">
@@ -112,6 +120,8 @@ const Form = () => {
                </select>
             </div>
          </fieldset>
+         <SaveButton saveEmployee={saveEmployee} />
+         <Modale text={text} trigger={isOpen} setTrigger={setIsOpen} />
       </form>
    );
 };

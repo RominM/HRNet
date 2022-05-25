@@ -2,9 +2,10 @@ form {
    position: relative;
    display: flex;
    justify-content: space-around;
-   margin-top: 50px;
+   margin: 50px 100px;
    padding: 1%;
-   width: 90%;
+   width: 85%;
+   box-sizing: border-box;
    fieldset {
       margin-top: 10px;
       border-radius: 7px;

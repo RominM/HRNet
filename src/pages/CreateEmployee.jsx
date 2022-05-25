@@ -5,8 +5,8 @@ import Form from '../components/Form';
 import Modale from '../components/Modale';
 
 const CreateEmployee = () => {
-   const [isOpen, setIsOpen] = useState(false);
-   const text = 'Employee created !!';
+   // const [isOpen, setIsOpen] = useState(false);
+   // const text = 'Employee created !!';
    return (
       <HelmetProvider>
          <Helmet>
@@ -18,9 +18,9 @@ const CreateEmployee = () => {
                   <h1>Create Employee</h1>
                </div>
                <Form />
-               <SaveButton setTrigger={setIsOpen} />
+               {/* <SaveButton setTrigger={setIsOpen} /> */}
             </section>
-            <Modale text={text} trigger={isOpen} setTrigger={setIsOpen} />
+            {/* <Modale text={text} trigger={isOpen} setTrigger={setIsOpen} /> */}
          </main>
       </HelmetProvider>
    );

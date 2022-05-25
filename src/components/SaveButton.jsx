@@ -5,7 +5,7 @@ const SaveButton = (props) => {
       <button
          className="save-btn"
          type="button"
-         onClick={() => props.setTrigger(true)}
+         onClick={(e) => props.saveEmployee(e)}
       >
          Save
       </button>
