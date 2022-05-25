@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import DatePicker from 'react-date-picker';
 import { departements } from '../utils/departementsList';
 import { statesUS } from '../utils/statesUS';
-import Modale from './Modale';
 
 const Form = () => {
    const [state, setState] = useState({
@@ -16,10 +15,6 @@ const Form = () => {
       state: '',
       zipCode: '',
    });
-
-   // Handle Modale
-   // const [modale, setModale] = useState(false);
-   // const closeModale = () => setModale(false);
 
    const getValue = (e) => {
       const name = e.target.name;
@@ -38,8 +33,6 @@ const Form = () => {
       const city = state.city;
       const thisState = state.state;
       const zipCode = state.zipCode;
-
-      // setModale(true);
    };
    console.log(state);
 
