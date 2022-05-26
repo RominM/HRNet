@@ -4,7 +4,7 @@ const SaveButton = (props) => {
    return (
       <button
          className="save-btn"
-         type="button"
+         type="submit"
          onClick={(e) => props.saveEmployee(e)}
       >
          Save
