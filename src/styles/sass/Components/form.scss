@@ -2,9 +2,9 @@ form {
    position: relative;
    display: flex;
    justify-content: space-around;
-   margin: 50px 100px;
+   margin: 5% auto;
    padding: 1%;
-   width: 85%;
+   width: 100%;
    box-sizing: border-box;
    fieldset {
       margin-top: 10px;
@@ -13,6 +13,7 @@ form {
       background: linear-gradient(110deg, $gradient_two, $gradient_one);
       background-color: $white_color;
       width: 30%;
+      min-width: 250px;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.661);
       padding: 3%;
       legend {
@@ -32,6 +33,17 @@ form {
             height: 25px;
             font-size: 1.1rem;
          }
+      }
+   }
+}
+
+@media screen and (max-width: 1000px) {
+   form {
+      flex-direction: column;
+      margin: auto;
+      fieldset {
+         margin: auto;
+         width: 80%;
       }
    }
 }
