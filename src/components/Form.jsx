@@ -18,6 +18,7 @@ const Form = () => {
       state: '',
       zipCode: '',
    });
+
    const [isOpen, setIsOpen] = useState(false);
 
    const getValue = (e) => {
