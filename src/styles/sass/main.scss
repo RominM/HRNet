@@ -1,5 +1,7 @@
 @import './Bases/typography';
 @import './Bases/colors.scss';
+@import'./Bases/reset.scss';
+@import './Bases/app.scss';
 @import './Layout/bloc-page.scss';
 @import './layout/header';
 @import './Layout/section.scss';
@@ -9,3 +11,4 @@
 @import './Components/datepicker.scss';
 @import './Components/table.scss';
 @import './Components/button.scss';
+// @import './Components/error.scss';

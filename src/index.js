@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 // import reportWebVitals from './utils/perf/reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import './styles/reset.css';
-import './styles/app.css';
 import './styles/sass/main.scss';
 
 ReactDOM.render(

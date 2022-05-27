@@ -1,0 +1,27 @@
+.formData[data-error]::after {
+   content: attr(data-error);
+   font-size: 0.9em;
+   font-weight: bold;
+   color: #e54858;
+   display: block;
+   margin-top: 7px;
+   margin-bottom: 7px;
+   text-align: left;
+   line-height: 0.3;
+   opacity: 0;
+   transition: 0.3s;
+}
+
+.formData[data-error-visible='true']::after {
+   opacity: 1;
+}
+
+.formData[data-error-visible='true'] input {
+   border: 3px solid #e54858;
+}
+
+input[data-error]::after {
+   content: attr(data-error);
+   font-size: 0.4em;
+   color: red;
+}
