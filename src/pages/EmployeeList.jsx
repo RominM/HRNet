@@ -2,7 +2,9 @@ import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Table from '../components/Table';
 
-const EmployeeList = () => {
+const EmployeeList = (props) => {
+   const newEmployee = props.newEmployee;
+
    return (
       <HelmetProvider>
          <Helmet>
@@ -13,7 +15,7 @@ const EmployeeList = () => {
                <div className="title">
                   <h1>Current Employees</h1>
                </div>
-               <Table />
+               <Table newEmployee={newEmployee} />
             </section>
          </main>
       </HelmetProvider>

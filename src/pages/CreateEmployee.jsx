@@ -4,7 +4,8 @@ import SaveButton from '../components/SaveButton';
 import Form from '../components/Form';
 import Modale from '../components/Modale';
 
-const CreateEmployee = () => {
+const CreateEmployee = (props) => {
+   const setNewEmployee = props.setNewEmployee;
    // const [isOpen, setIsOpen] = useState(false);
    // const text = 'Employee created !!';
    return (
@@ -17,7 +18,7 @@ const CreateEmployee = () => {
                <div className="title">
                   <h1>Create Employee</h1>
                </div>
-               <Form />
+               <Form setNewEmployee={setNewEmployee} />
                {/* <SaveButton setTrigger={setIsOpen} /> */}
             </section>
             {/* <Modale text={text} trigger={isOpen} setTrigger={setIsOpen} /> */}

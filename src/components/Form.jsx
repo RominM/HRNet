@@ -6,7 +6,9 @@ import Modale from './Modale';
 import SaveButton from './SaveButton';
 import SelectOpt from './SelectOpt';
 
-const Form = () => {
+const Form = (props) => {
+   const setNewEmployee = props.setNewEmployee;
+
    const [state, setState] = useState({
       firstName: '',
       lastName: '',
@@ -32,6 +34,7 @@ const Form = () => {
       e.preventDefault();
       newState.push(state);
       setState(state);
+      setNewEmployee(state);
       setIsOpen(true);
       console.log(newState);
    };
