@@ -18,20 +18,22 @@ const Form = () => {
       state: '',
       zipCode: '',
    });
-
+   const newState = [];
    const [isOpen, setIsOpen] = useState(false);
 
-   const getValue = (e) => {
-      const name = e.target.name;
-      const value = e.target.value;
-      setState({ [name]: value });
+   const setValue = (args) => {
+      const name = args.target ? args.target.name : args.name;
+      const value = args.target ? args.target.value : args.value;
+      state[name] = value;
+      setState(state);
    };
 
    const saveEmployee = (e) => {
       e.preventDefault();
-
-      console.log(state);
+      newState.push(state);
+      setState(state);
       setIsOpen(true);
+      console.log(newState);
    };
 
    const textModal = 'Employee created !!';
@@ -45,13 +47,13 @@ const Form = () => {
                <input
                   type="text"
                   id="first-name"
-                  onChange={getValue}
+                  onChange={setValue}
                   name="firstName"
                />
 
                <label htmlFor="last-name">Last Name</label>
                <input
-                  onChange={getValue}
+                  onChange={setValue}
                   type="text"
                   id="last-name"
                   name="lastName"
@@ -71,7 +73,9 @@ const Form = () => {
 
                <label htmlFor="start-date">Start Date</label>
                <DatePicker
-                  onChange={(value) => setState({ ...state, startDate: value })}
+                  onChange={(value) => {
+                     setState({ ...state, startDate: value });
+                  }}
                   value={state.startDate}
                   format={'MM/dd/y'}
                   className="datepicker"
@@ -82,9 +86,10 @@ const Form = () => {
                <label htmlFor="department">Department</label>
                <SelectOpt
                   options={departements}
-                  getValue={(value) =>
-                     setState({ ...state, department: value })
-                  }
+                  setValue={(value) => {
+                     setValue({ name: 'department', value });
+                  }}
+                  placeholder={departements[0].label}
                />
             </div>
          </fieldset>
@@ -96,24 +101,25 @@ const Form = () => {
                <input
                   id="street"
                   type="text"
-                  onChange={getValue}
+                  onChange={setValue}
                   name="street"
                />
 
                <label htmlFor="city">City</label>
-               <input id="city" type="text" onChange={getValue} name="city" />
+               <input id="city" type="text" onChange={setValue} name="city" />
 
                <label htmlFor="stateChoice">State</label>
                <SelectOpt
                   options={statesUS}
-                  getValue={(value) => setState({ ...state, state: value })}
+                  setValue={(value) => setValue({ name: 'state', value })}
+                  placeholder={statesUS[0].label}
                />
 
                <label htmlFor="zip-code">Zip Code</label>
                <input
                   id="zip-code"
                   type="number"
-                  onChange={getValue}
+                  onChange={setValue}
                   name="zipCode"
                />
             </div>
