@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-date-picker';
-// import Select from 'react-select';
 import { departements } from '../utils/departementsList';
 import { statesUS } from '../utils/statesUS';
 import Modale from './Modale';
 import SaveButton from './SaveButton';
+import SelectOpt from './SelectOpt';
 
 const Form = () => {
-   const [isOpen, setIsOpen] = useState(false);
-
-   const text = 'Employee created !!';
-
    const [state, setState] = useState({
       firstName: '',
       lastName: '',
@@ -22,6 +18,7 @@ const Form = () => {
       state: '',
       zipCode: '',
    });
+   const [isOpen, setIsOpen] = useState(false);
 
    const getValue = (e) => {
       const name = e.target.name;
@@ -31,17 +28,12 @@ const Form = () => {
 
    const saveEmployee = (e) => {
       e.preventDefault();
-      // const firstName = state.firstName;
-      // const lastName = state.lastName;
-      // const startDate = state.startDate;
-      // const department = state.department;
-      // const dateOfBirth = state.dateOfBirth;
-      // const street = state.street;
-      // const city = state.city;
-      // const stateChoice = state.state;
-      // const zipCode = state.zipCode;
+
+      console.log(state);
       setIsOpen(true);
    };
+
+   const textModal = 'Employee created !!';
 
    return (
       <form action="" id="create-employee">
@@ -103,21 +95,7 @@ const Form = () => {
                <input id="city" type="text" onChange={getValue} name="city" />
 
                <label htmlFor="stateChoice">State</label>
-               <select
-                  name="stateChoice"
-                  id="stateChoice"
-                  onChange={getValue}
-                  value={state.stateChoice}
-               >
-                  {statesUS.map((state) => (
-                     <option key={state.abbreviation}>{state.name}</option>
-                  ))}
-               </select>
-               {/* <Select
-                  defaultValue={selectedOption}
-                  onChange={setSelectedOption}
-                  options={statesUS}
-               /> */}
+               <SelectOpt options={statesUS} />
 
                <label htmlFor="zip-code">Zip Code</label>
                <input
@@ -128,25 +106,11 @@ const Form = () => {
                />
 
                <label htmlFor="department">Department</label>
-               <select
-                  name="department"
-                  id="department"
-                  onChange={getValue}
-                  value={state.department}
-               >
-                  {departements.map((department) => (
-                     <option key={department}>{department}</option>
-                  ))}
-               </select>
-               {/* <Select
-                  defaultValue={selectedOption}
-                  onChange={setSelectedOption}
-                  options={departements}
-               /> */}
+               <SelectOpt options={departements} />
             </div>
          </fieldset>
          <SaveButton saveEmployee={saveEmployee} />
-         <Modale text={text} trigger={isOpen} setTrigger={setIsOpen} />
+         <Modale text={textModal} trigger={isOpen} setTrigger={setIsOpen} />
       </form>
    );
 };
