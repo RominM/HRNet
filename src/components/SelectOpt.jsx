@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 
 const SelectOpt = (props) => {
-   const [selectedOption, setSelectedOption] = useState(null);
-
    return (
       <div>
-         <Select
-            defaultlabel={selectedOption}
-            onChange={setSelectedOption}
-            options={props.options}
-         />
+         <Select onChange={(e) => props.getValue(e)} options={props.options} />
       </div>
    );
 };

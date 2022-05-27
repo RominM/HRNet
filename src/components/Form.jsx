@@ -95,7 +95,10 @@ const Form = () => {
                <input id="city" type="text" onChange={getValue} name="city" />
 
                <label htmlFor="stateChoice">State</label>
-               <SelectOpt options={statesUS} />
+               <SelectOpt
+                  options={statesUS}
+                  getValue={(value) => setState({ ...state, state: value })}
+               />
 
                <label htmlFor="zip-code">Zip Code</label>
                <input
@@ -106,7 +109,12 @@ const Form = () => {
                />
 
                <label htmlFor="department">Department</label>
-               <SelectOpt options={departements} />
+               <SelectOpt
+                  options={departements}
+                  getValue={(value) =>
+                     setState({ ...state, department: value })
+                  }
+               />
             </div>
          </fieldset>
          <SaveButton saveEmployee={saveEmployee} />
