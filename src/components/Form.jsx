@@ -77,6 +77,14 @@ const Form = () => {
                   id="start-date"
                   name="startDate"
                />
+
+               <label htmlFor="department">Department</label>
+               <SelectOpt
+                  options={departements}
+                  getValue={(value) =>
+                     setState({ ...state, department: value })
+                  }
+               />
             </div>
          </fieldset>
 
@@ -107,17 +115,9 @@ const Form = () => {
                   onChange={getValue}
                   name="zipCode"
                />
-
-               <label htmlFor="department">Department</label>
-               <SelectOpt
-                  options={departements}
-                  getValue={(value) =>
-                     setState({ ...state, department: value })
-                  }
-               />
             </div>
+            <SaveButton saveEmployee={saveEmployee} />
          </fieldset>
-         <SaveButton saveEmployee={saveEmployee} />
          <Modale text={textModal} trigger={isOpen} setTrigger={setIsOpen} />
       </form>
    );

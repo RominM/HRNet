@@ -1,10 +1,9 @@
 .save-btn {
-   position: absolute;
-   right: -100px;
-   bottom: -50px;
    width: 150px;
    height: 40px;
-   margin-right: 75px;
+   margin-top: 35px;
+   margin-right: 45px;
+   float: right;
    box-shadow: 3px 3px 3px $gradient_one, inset 0px 0px 0px $gradient_two;
    transition: 0.3s;
    font-size: 1.2rem;
