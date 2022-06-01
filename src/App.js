@@ -7,8 +7,8 @@ import EmployeeList from './pages/EmployeeList';
 import { stockData } from './utils/stockData';
 
 function App() {
-   const [newEmployee, setNewEmployee] = useState([]);
-   stockData(newEmployee);
+   const [newEmployee, setNewEmployee] = useState();
+   // stockData(newEmployee);
    return (
       <div className="bloc-page">
          <Header />

@@ -8,6 +8,7 @@ const CreateEmployee = (props) => {
    const setNewEmployee = props.setNewEmployee;
    // const [isOpen, setIsOpen] = useState(false);
    // const text = 'Employee created !!';
+   
    return (
       <HelmetProvider>
          <Helmet>

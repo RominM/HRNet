@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import DatePicker from 'react-date-picker';
 import { departements } from '../utils/departementsList';
 import { statesUS } from '../utils/statesUS';
-import Modale from './Modale';
+import { Modale } from 'modale-react-rm';
 import SaveButton from './SaveButton';
 import SelectOpt from './SelectOpt';
 
 const Form = (props) => {
    const setNewEmployee = props.setNewEmployee;
 
+   const [isOpen, setIsOpen] = useState(false);
    const [state, setState] = useState({
       firstName: '',
       lastName: '',
@@ -20,26 +21,46 @@ const Form = (props) => {
       state: '',
       zipCode: '',
    });
-   const newState = [];
-   const [isOpen, setIsOpen] = useState(false);
+
+   // have to use .toLocaleDateString('en-US') to get date in right format
 
    const setValue = (args) => {
       const name = args.target ? args.target.name : args.name;
       const value = args.target ? args.target.value : args.value;
+      if (name === undefined) {
+      }
       state[name] = value;
       setState(state);
    };
 
+   const newState = [
+      {
+         firstName: state.firstName,
+         lastName: state.lastName,
+         startDate: state.startDate.toLocaleDateString('en-US'),
+         department: state.department,
+         dateOfBirth: state.dateOfBirth.toLocaleDateString('en-US'),
+         street: state.street,
+         city: state.city,
+         state: state.state,
+         zipCode: state.zipCode,
+      },
+   ];
    const saveEmployee = (e) => {
       e.preventDefault();
-      newState.push(state);
-      setState(state);
-      setNewEmployee(state);
+      // newState.push(state);
+      // setState(newState);
+      // setNewEmployee(newState);
+      console.log('modale should be open');
       setIsOpen(true);
-      console.log(newState);
+      console.log('STATE >> inside', state);
+      console.log('NEWSTATE >> inside', newState);
    };
 
    const textModal = 'Employee created !!';
+
+   // console.log('STATE >> outSide', state);
+   // console.log('NEWSTATE >> outSide', newState);
 
    return (
       <form action="" id="create-employee">
@@ -64,21 +85,25 @@ const Form = (props) => {
 
                <label htmlFor="date-of-birth">Date of Birth</label>
                <DatePicker
-                  onChange={(value) =>
-                     setState({ ...state, dateOfBirth: value })
-                  }
+                  onChange={(date) => {
+                     setState({ ...state, dateOfBirth: date });
+                  }}
+                  // onChange={setValue}
                   value={state.dateOfBirth}
                   format={'MM/dd/y'}
                   className="datepicker"
                   id="date-of-birth"
                   name="dateOfBirth"
+                  // autoFocus={true}
+                  // closeCalendar={true}
                />
 
                <label htmlFor="start-date">Start Date</label>
                <DatePicker
-                  onChange={(value) => {
-                     setState({ ...state, startDate: value });
+                  onChange={(date) => {
+                     setState({ ...state, startDate: date });
                   }}
+                  // onChange={setValue}
                   value={state.startDate}
                   format={'MM/dd/y'}
                   className="datepicker"
@@ -128,7 +153,7 @@ const Form = (props) => {
             </div>
             <SaveButton saveEmployee={saveEmployee} />
          </fieldset>
-         <Modale text={textModal} trigger={isOpen} setTrigger={setIsOpen} />
+         <Modale content={textModal} trigger={isOpen} setTrigger={setIsOpen} />
       </form>
    );
 };
