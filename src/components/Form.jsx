@@ -26,7 +26,6 @@ const Form = (props) => {
     const name = args.target ? args.target.name : args.name;
     const value = args.target ? args.target.value : args.value;
     state[name] = value;
-    setState(state);
   };
 
   const saveEmployee = (e) => {
@@ -44,8 +43,16 @@ const Form = (props) => {
         zipCode: state.zipCode,
       },
     ];
+    setState(newState);
     setNewEmployee(newState);
     setIsOpen(true);
+    document.getElementById('create-employee').reset();
+  };
+
+  const handleKeypress = (e) => {
+    if (e.key === 'Enter') {
+      saveEmployee();
+    }
   };
 
   const textModal = 'Employee created !!';
@@ -76,14 +83,11 @@ const Form = (props) => {
             onChange={(date) => {
               setState({ ...state, dateOfBirth: date });
             }}
-            // onChange={setValue}
             value={state.dateOfBirth}
             format={'MM/dd/y'}
             className="datepicker"
             id="date-of-birth"
             name="dateOfBirth"
-            // autoFocus={true}
-            // closeCalendar={true}
           />
 
           <label htmlFor="start-date">Start Date</label>
@@ -133,7 +137,7 @@ const Form = (props) => {
             name="zipCode"
           />
         </div>
-        <SaveButton saveEmployee={saveEmployee} />
+        <SaveButton saveEmployee={saveEmployee} onKeypresse={handleKeypress} />
       </fieldset>
       <Modale content={textModal} trigger={isOpen} setTrigger={setIsOpen} />
     </form>
