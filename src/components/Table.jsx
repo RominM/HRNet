@@ -4,12 +4,14 @@ import { labelsForm } from '../utils/labels.format';
 import { exampleData } from '../utils/data.employee';
 
 const Table = (props) => {
-   const newEmployee = props.newEmployee;
-   if (newEmployee) {
-      console.log(newEmployee);
-   }
+  const newEmployee = props.newEmployee;
+  let addEmployee = [];
 
-   return <DataTables labels={labelsForm} data={exampleData} />;
+  newEmployee
+    ? addEmployee.push(...newEmployee)
+    : addEmployee.push(...exampleData);
+
+  return <DataTables labels={labelsForm} data={addEmployee} />;
 };
 
 export default Table;

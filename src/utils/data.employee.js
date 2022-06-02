@@ -5,7 +5,6 @@ const exampleData = [
       startDate: '04/14/2021',
       department: 'Marketing',
       dateOfBirth: '01/01/1990',
-      street: 'Main Street',
       street: 'NY',
       state: 'AL',
       zipCode: ' 01800 ',

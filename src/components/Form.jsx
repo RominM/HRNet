@@ -7,155 +7,137 @@ import SaveButton from './SaveButton';
 import SelectOpt from './SelectOpt';
 
 const Form = (props) => {
-   const setNewEmployee = props.setNewEmployee;
+  const setNewEmployee = props.setNewEmployee;
 
-   const [isOpen, setIsOpen] = useState(false);
-   const [state, setState] = useState({
-      firstName: '',
-      lastName: '',
-      startDate: new Date(),
-      department: '',
-      dateOfBirth: new Date(),
-      street: '',
-      city: '',
-      state: '',
-      zipCode: '',
-   });
+  const [isOpen, setIsOpen] = useState(false);
+  const [state, setState] = useState({
+    firstName: '',
+    lastName: '',
+    startDate: new Date(),
+    department: '',
+    dateOfBirth: new Date(),
+    street: '',
+    city: '',
+    state: '',
+    zipCode: '',
+  });
 
-   // have to use .toLocaleDateString('en-US') to get date in right format
+  const setValue = (args) => {
+    const name = args.target ? args.target.name : args.name;
+    const value = args.target ? args.target.value : args.value;
+    state[name] = value;
+    setState(state);
+  };
 
-   const setValue = (args) => {
-      const name = args.target ? args.target.name : args.name;
-      const value = args.target ? args.target.value : args.value;
-      if (name === undefined) {
-      }
-      state[name] = value;
-      setState(state);
-   };
-
-   const newState = [
+  const saveEmployee = (e) => {
+    e.preventDefault();
+    const newState = [
       {
-         firstName: state.firstName,
-         lastName: state.lastName,
-         startDate: state.startDate.toLocaleDateString('en-US'),
-         department: state.department,
-         dateOfBirth: state.dateOfBirth.toLocaleDateString('en-US'),
-         street: state.street,
-         city: state.city,
-         state: state.state,
-         zipCode: state.zipCode,
+        firstName: state.firstName,
+        lastName: state.lastName,
+        startDate: state.startDate.toLocaleDateString('en-US'),
+        department: state.department.label,
+        dateOfBirth: state.dateOfBirth.toLocaleDateString('en-US'),
+        street: state.street,
+        city: state.city,
+        state: state.state.label,
+        zipCode: state.zipCode,
       },
-   ];
-   const saveEmployee = (e) => {
-      e.preventDefault();
-      // newState.push(state);
-      // setState(newState);
-      // setNewEmployee(newState);
-      console.log('modale should be open');
-      setIsOpen(true);
-      console.log('STATE >> inside', state);
-      console.log('NEWSTATE >> inside', newState);
-   };
+    ];
+    setNewEmployee(newState);
+    setIsOpen(true);
+  };
 
-   const textModal = 'Employee created !!';
+  const textModal = 'Employee created !!';
 
-   // console.log('STATE >> outSide', state);
-   // console.log('NEWSTATE >> outSide', newState);
+  return (
+    <form action="" id="create-employee">
+      <fieldset className="informations left-part">
+        <legend>Informations</legend>
+        <div className="inputs">
+          <label htmlFor="first-name">First Name</label>
+          <input
+            type="text"
+            id="first-name"
+            onChange={setValue}
+            name="firstName"
+          />
 
-   return (
-      <form action="" id="create-employee">
-         <fieldset className="informations left-part">
-            <legend>Informations</legend>
-            <div className="inputs">
-               <label htmlFor="first-name">First Name</label>
-               <input
-                  type="text"
-                  id="first-name"
-                  onChange={setValue}
-                  name="firstName"
-               />
+          <label htmlFor="last-name">Last Name</label>
+          <input
+            onChange={setValue}
+            type="text"
+            id="last-name"
+            name="lastName"
+          />
 
-               <label htmlFor="last-name">Last Name</label>
-               <input
-                  onChange={setValue}
-                  type="text"
-                  id="last-name"
-                  name="lastName"
-               />
+          <label htmlFor="date-of-birth">Date of Birth</label>
+          <DatePicker
+            onChange={(date) => {
+              setState({ ...state, dateOfBirth: date });
+            }}
+            // onChange={setValue}
+            value={state.dateOfBirth}
+            format={'MM/dd/y'}
+            className="datepicker"
+            id="date-of-birth"
+            name="dateOfBirth"
+            // autoFocus={true}
+            // closeCalendar={true}
+          />
 
-               <label htmlFor="date-of-birth">Date of Birth</label>
-               <DatePicker
-                  onChange={(date) => {
-                     setState({ ...state, dateOfBirth: date });
-                  }}
-                  // onChange={setValue}
-                  value={state.dateOfBirth}
-                  format={'MM/dd/y'}
-                  className="datepicker"
-                  id="date-of-birth"
-                  name="dateOfBirth"
-                  // autoFocus={true}
-                  // closeCalendar={true}
-               />
+          <label htmlFor="start-date">Start Date</label>
+          <DatePicker
+            onChange={(date) => {
+              setState({ ...state, startDate: date });
+            }}
+            value={state.startDate}
+            format={'MM/dd/y'}
+            className="datepicker"
+            id="start-date"
+            name="startDate"
+          />
 
-               <label htmlFor="start-date">Start Date</label>
-               <DatePicker
-                  onChange={(date) => {
-                     setState({ ...state, startDate: date });
-                  }}
-                  // onChange={setValue}
-                  value={state.startDate}
-                  format={'MM/dd/y'}
-                  className="datepicker"
-                  id="start-date"
-                  name="startDate"
-               />
+          <label htmlFor="department">Department</label>
+          <SelectOpt
+            options={departements}
+            setValue={(value) => {
+              setValue({ name: 'department', value });
+            }}
+            placeholder={departements[0].label}
+          />
+        </div>
+      </fieldset>
 
-               <label htmlFor="department">Department</label>
-               <SelectOpt
-                  options={departements}
-                  setValue={(value) => {
-                     setValue({ name: 'department', value });
-                  }}
-                  placeholder={departements[0].label}
-               />
-            </div>
-         </fieldset>
+      <fieldset className="address right-part">
+        <legend>Address</legend>
+        <div className="inputs">
+          <label htmlFor="street">Street</label>
+          <input id="street" type="text" onChange={setValue} name="street" />
 
-         <fieldset className="address right-part">
-            <legend>Address</legend>
-            <div className="inputs">
-               <label htmlFor="street">Street</label>
-               <input
-                  id="street"
-                  type="text"
-                  onChange={setValue}
-                  name="street"
-               />
+          <label htmlFor="city">City</label>
+          <input id="city" type="text" onChange={setValue} name="city" />
 
-               <label htmlFor="city">City</label>
-               <input id="city" type="text" onChange={setValue} name="city" />
+          <label htmlFor="stateChoice">State</label>
+          <SelectOpt
+            options={statesUS}
+            setValue={(value) => setValue({ name: 'state', value })}
+            placeholder={statesUS[0].label}
+          />
 
-               <label htmlFor="stateChoice">State</label>
-               <SelectOpt
-                  options={statesUS}
-                  setValue={(value) => setValue({ name: 'state', value })}
-                  placeholder={statesUS[0].label}
-               />
-
-               <label htmlFor="zip-code">Zip Code</label>
-               <input
-                  id="zip-code"
-                  type="number"
-                  onChange={setValue}
-                  name="zipCode"
-               />
-            </div>
-            <SaveButton saveEmployee={saveEmployee} />
-         </fieldset>
-         <Modale content={textModal} trigger={isOpen} setTrigger={setIsOpen} />
-      </form>
-   );
+          <label htmlFor="zip-code">Zip Code</label>
+          <input
+            id="zip-code"
+            type="number"
+            onChange={setValue}
+            name="zipCode"
+          />
+        </div>
+        <SaveButton saveEmployee={saveEmployee} />
+      </fieldset>
+      <Modale content={textModal} trigger={isOpen} setTrigger={setIsOpen} />
+    </form>
+  );
 };
 
 export default Form;

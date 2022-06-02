@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import SaveButton from '../components/SaveButton';
+// import SaveButton from '../components/SaveButton';
+// import { Modale } from 'modale-react-rm';
 import Form from '../components/Form';
-import Modale from '../components/Modale';
 
 const CreateEmployee = (props) => {
    const setNewEmployee = props.setNewEmployee;
    // const [isOpen, setIsOpen] = useState(false);
    // const text = 'Employee created !!';
-   
+
    return (
       <HelmetProvider>
          <Helmet>
@@ -22,7 +22,7 @@ const CreateEmployee = (props) => {
                <Form setNewEmployee={setNewEmployee} />
                {/* <SaveButton setTrigger={setIsOpen} /> */}
             </section>
-            {/* <Modale text={text} trigger={isOpen} setTrigger={setIsOpen} /> */}
+            {/* <Modale content={text} trigger={isOpen} setTrigger={setIsOpen} /> */}
          </main>
       </HelmetProvider>
    );

@@ -19,3 +19,22 @@ __________________________________________________________________
    __________________________________________________________________
 
 // DROPDOWN PLUGIN
+
+
+
+// PUBLISH NPM PACKAGE
+
+npx create-react-library
+
+// npm init
+// npm install react
+// npm install react-dom
+// change "dependencies" from package.json in "peerDependancies"
+// deleted the "node modules" file then check with npm install
+// npm login
+   /* 
+   * @username: mgl-studio
+   * @password: **********
+   * @email: rominmanogil.off@gmail.com
+   */
+// npm publish
