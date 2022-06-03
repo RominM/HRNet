@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-date-picker';
-import { departements } from '../utils/departementsList';
-import { statesUS } from '../utils/statesUS';
+import { departements } from '../utils/labels/departementsList';
+import { statesUS } from '../utils/labels/statesUS';
 import { Modale } from 'modale-react-rm';
 import SaveButton from './SaveButton';
 import SelectOpt from './SelectOpt';

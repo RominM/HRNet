@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import DataTables from 'datatables-plugin-react';
-import { labelsForm } from '../utils/labels.format';
-import { exampleData } from '../utils/data.employee';
+import { labelsForm } from '../utils/labels/labels.format';
+import { exampleData } from '../utils/data/data.employee';
 
 const Table = (props) => {
   const newEmployee = props.newEmployee;
