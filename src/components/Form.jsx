@@ -8,9 +8,7 @@ import SelectOpt from './SelectOpt';
 
 const Form = (props) => {
   const setNewEmployee = props.setNewEmployee;
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [state, setState] = useState({
+  const emptyState = {
     firstName: '',
     lastName: '',
     startDate: new Date(),
@@ -20,7 +18,10 @@ const Form = (props) => {
     city: '',
     state: '',
     zipCode: '',
-  });
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [state, setState] = useState(emptyState);
 
   const setValue = (args) => {
     const name = args.target ? args.target.name : args.name;
@@ -30,23 +31,21 @@ const Form = (props) => {
 
   const saveEmployee = (e) => {
     e.preventDefault();
-    const newState = [
-      {
-        firstName: state.firstName,
-        lastName: state.lastName,
-        startDate: state.startDate.toLocaleDateString('en-US'),
-        department: state.department.label,
-        dateOfBirth: state.dateOfBirth.toLocaleDateString('en-US'),
-        street: state.street,
-        city: state.city,
-        state: state.state.label,
-        zipCode: state.zipCode,
-      },
-    ];
-    setState(newState);
-    setNewEmployee(newState);
-    setIsOpen(true);
+    const newState = {
+      firstName: state.firstName,
+      lastName: state.lastName,
+      startDate: state.startDate.toLocaleDateString('en-US'),
+      department: state.department.label,
+      dateOfBirth: state.dateOfBirth.toLocaleDateString('en-US'),
+      street: state.street,
+      city: state.city,
+      state: state.state.label,
+      zipCode: state.zipCode,
+    };
     document.getElementById('create-employee').reset();
+    setIsOpen(true);
+    setState(emptyState);
+    setNewEmployee(newState);
   };
 
   const handleKeypress = (e) => {
@@ -58,7 +57,7 @@ const Form = (props) => {
   const textModal = 'Employee created !!';
 
   return (
-    <form action="" id="create-employee">
+    <form action="/" id="create-employee">
       <fieldset className="informations left-part">
         <legend>Informations</legend>
         <div className="inputs">

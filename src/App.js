@@ -1,25 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Layout/Footer';
 import Header from './components/Layout/Header';
 import CreateEmployee from './pages/CreateEmployee';
 import EmployeeList from './pages/EmployeeList';
-// import { stockData } from './utils/stockData';
+
+const initialData = localStorage.getItem('employee');
 
 function App() {
-  const [newEmployee, setNewEmployee] = useState([]);
+  const [currentList, setCurrentList] = useState(
+    initialData ? JSON.parse(initialData) : []
+  );
 
-  useEffect(() => {
-    if (localStorage.getItem('employee') !== null) {
-      setNewEmployee(JSON.parse(localStorage.getItem('employee')));
-    }
-  }, []);
-
-  useEffect(() => {
-    if (newEmployee.length > 0) {
-      localStorage.setItem('employee', JSON.stringify(newEmployee));
-    }
-  }, [newEmployee]);
+  function addEmployee(newOne) {
+    currentList.push(newOne);
+    localStorage.setItem('employee', JSON.stringify(currentList));
+    setCurrentList(currentList);
+  }
 
   return (
     <div className="bloc-page">
@@ -27,11 +24,11 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<CreateEmployee setNewEmployee={setNewEmployee} />}
+          element={<CreateEmployee setCurrentList={addEmployee} />}
         />
         <Route
           path="/employee-list"
-          element={<EmployeeList newEmployee={newEmployee} />}
+          element={<EmployeeList updateNewEmployee={currentList} />}
         />
       </Routes>
       <Footer />
