@@ -1,22 +1,54 @@
 header {
-   display: flex;
-   justify-content: space-between;
-   height: 50px;
-   line-height: 50px;
-   background: linear-gradient(
-      110deg,
-      #fff 70%,
-      $gradient_two 60%,
-      $gradient_one
-   );
-   h1 {
-      margin: auto 50px;
-      font-size: 2rem;
-   }
-   #path {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  line-height: 50px;
+  background: linear-gradient(
+    110deg,
+    #fff 70%,
+    $gradient_two 60%,
+    $gradient_one
+  );
+  h1 {
+    width: 30%;
+    margin: auto 50px;
+    font-size: 2rem;
+  }
+  .links {
+    width: 70%;
+    text-align: end;
+    #path {
       font-size: 1.3rem;
       text-decoration: none;
       color: #fff;
-      margin: auto 50px;
-   }
+      margin: auto 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    background: linear-gradient(
+      110deg,
+      #fff 50%,
+      $gradient_two 50%,
+      $gradient_one
+    );
+  }
+}
+
+@media screen and (max-width: 550px) {
+  header {
+    h1 {
+      font-size: 3vh;
+    }
+    .links {
+      text-align: center;
+      #path {
+        width: 100%;
+        margin: 0;
+        font-size: 1.9vh;
+      }
+    }
+  }
 }

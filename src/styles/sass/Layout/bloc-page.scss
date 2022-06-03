@@ -1,8 +1,9 @@
 html {
-   // overflow: hidden;
+  // overflow: hidden;
 }
 
 .bloc-page {
-   // overflow: hidden;
-   font-family: $mainFont;
+  position: relative;
+  overflow: auto;
+  font-family: $mainFont;
 }

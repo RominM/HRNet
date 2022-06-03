@@ -13,7 +13,7 @@ const EmployeeList = (props) => {
       <main id="employee-div" className="container">
         <section>
           <div className="title">
-            <h1>Current Employees</h1>
+            <h2>Current Employees</h2>
           </div>
           <Table newEmployee={newEmployee} />
         </section>
