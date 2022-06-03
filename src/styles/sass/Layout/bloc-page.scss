@@ -1,9 +1,10 @@
-html {
-  // overflow: hidden;
+.bloc-page {
+  font-family: $mainFont;
 }
 
-.bloc-page {
-  position: relative;
-  overflow: auto;
-  font-family: $mainFont;
+@media screen and (max-width: 1000px) {
+  .bloc-page {
+    position: relative;
+    overflow: auto;
+  }
 }
