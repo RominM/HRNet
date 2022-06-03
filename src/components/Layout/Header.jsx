@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  // Handle Toggle
   const [toggle, setToggle] = useState(false);
-  // const navList = () => setToggle(!toggle);
-  // const navHome = () => setToggle(false);
 
   return (
     <header>
