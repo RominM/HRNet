@@ -1,24 +1,17 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Title from '../components/Title';
 import Table from '../components/Table';
 
 const EmployeeList = (props) => {
-  const newEmployee = props.newEmployee;
+  const updateNewEmploye = props.updateNewEmploye;
 
   return (
-    <HelmetProvider>
-      <Helmet>
-        <title>HRnet - Current Employees</title>
-      </Helmet>
-      <main id="employee-div" className="container">
-        <section>
-          <div className="title">
-            <h2>Current Employees</h2>
-          </div>
-          <Table newEmployee={newEmployee} />
-        </section>
-      </main>
-    </HelmetProvider>
+    <main className="container">
+      <section>
+        <Title title="Current Employees" />
+        <Table updateNewEmploye={updateNewEmploye} />
+      </section>
+    </main>
   );
 };
 

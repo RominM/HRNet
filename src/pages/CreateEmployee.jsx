@@ -1,30 +1,17 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-// import SaveButton from '../components/SaveButton';
-// import { Modale } from 'modale-react-rm';
+import Title from '../components/Title';
 import Form from '../components/Form';
 
 const CreateEmployee = (props) => {
   const setNewEmployee = props.setNewEmployee;
-  // const [isOpen, setIsOpen] = useState(false);
-  // const text = 'Employee created !!';
 
   return (
-    <HelmetProvider>
-      <Helmet>
-        <title>HRnet - Home</title>
-      </Helmet>
-      <main className="container">
-        <section>
-          <div className="title">
-            <h2>Create Employee</h2>
-          </div>
-          <Form setNewEmployee={setNewEmployee} />
-          {/* <SaveButton setTrigger={setIsOpen} /> */}
-        </section>
-        {/* <Modale content={text} trigger={isOpen} setTrigger={setIsOpen} /> */}
-      </main>
-    </HelmetProvider>
+    <main className="container">
+      <section>
+        <Title title="Create Employee" />
+        <Form setNewEmployee={setNewEmployee} />
+      </section>
+    </main>
   );
 };
 
