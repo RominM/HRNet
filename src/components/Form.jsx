@@ -5,27 +5,19 @@ import { statesUS } from '../utils/labels/statesUS';
 import { Modale } from 'modale-react-rm';
 import SaveButton from './SaveButton';
 import SelectOpt from './SelectOpt';
+import { emptyState } from '../utils/initState';
 
 const Form = (props) => {
   const addEmployee = props.setCurrentList;
-  const emptyState = {
-    firstName: '',
-    lastName: '',
-    startDate: new Date(),
-    department: '',
-    dateOfBirth: new Date(),
-    street: '',
-    city: '',
-    state: '',
-    zipCode: '',
-  };
 
   const [isOpen, setIsOpen] = useState(false);
   const [state, setState] = useState(emptyState);
+
   const setValue = (args) => {
     const name = args.target ? args.target.name : args.name;
     const value = args.target ? args.target.value : args.value;
     state[name] = value;
+    setState(state);
   };
 
   const saveEmployee = (e) => {
@@ -52,30 +44,32 @@ const Form = (props) => {
 
   const checkForm = (newState) => {
     if (newState.firstName.length < 2) {
-      alert('Please entry a FirstName');
+      alert('Please entry a FirstName (min 2 lettres)');
     } else if (newState.lastName.length < 2) {
-      alert('Please entry a lastName');
+      alert('Please entry a LastName (min 2 lettres)');
     } else if (newState.startDate == null) {
-      alert('Please entry a startDate');
+      /* Have to check the error when I use the cross */
+      alert('Please choose a Start date');
     } else if (newState.department == null) {
-      alert('Please entry a department');
+      alert('Please select a department');
     } else if (newState.dateOfBirth == null) {
-      alert('Please entry a dateOfBirth');
+      /* Have to check the error when I use the cross */
+      alert('Please choose a Date of birth');
     } else if (newState.street.length < 2) {
-      alert('Please entry a street');
+      alert('Please entry a Street (min 2 lettres)');
     } else if (newState.city.length < 2) {
-      alert('Please entry a city');
+      alert('Please entry a City (min 2 lettres)');
     } else if (newState.state == null) {
-      alert('Please entry a state');
-    } else if (newState.zipCode.length < 2) {
-      alert('Please entry a zipCode');
+      alert('Please select a State');
+    } else if (newState.zipCode.length === 0) {
+      alert('Please entry a Zip code');
     } else {
       document.getElementById('create-employee').reset();
       setIsOpen(true);
-      setState(emptyState);
       addEmployee(newState);
     }
   };
+
   const textModal = 'Employee created !!';
 
   return (
