@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
+import { PropTypes } from 'prop-types';
+// module NPM
 import DatePicker from 'react-date-picker';
+import { Modale } from 'modale-react-rm';
+import SelectOpt from './SelectOpt';
+// Init
 import { departements } from '../utils/labels/departementsList';
 import { statesUS } from '../utils/labels/statesUS';
-import { Modale } from 'modale-react-rm';
+import { initState } from '../utils/initState';
+// Component
 import SaveButton from './SaveButton';
-import SelectOpt from './SelectOpt';
-import { emptyState } from '../utils/initState';
 
 const Form = (props) => {
   const addEmployee = props.setCurrentList;
 
   const [isOpen, setIsOpen] = useState(false);
-  const [state, setState] = useState(emptyState);
+  const [state, setState] = useState(initState);
 
   const setValue = (args) => {
     const name = args.target ? args.target.name : args.name;
@@ -44,14 +48,14 @@ const Form = (props) => {
 
   const checkForm = (newState) => {
     if (newState.firstName.length < 2) {
-      alert('Please entry a FirstName (min 2 lettres)');
+      alert('Please entry a First Name (min 2 lettres)');
     } else if (newState.lastName.length < 2) {
-      alert('Please entry a LastName (min 2 lettres)');
+      alert('Please entry a Last Name (min 2 lettres)');
     } else if (newState.startDate == null) {
       /* Have to check the error when I use the cross */
       alert('Please choose a Start date');
     } else if (newState.department == null) {
-      alert('Please select a department');
+      alert('Please select a Department');
     } else if (newState.dateOfBirth == null) {
       /* Have to check the error when I use the cross */
       alert('Please choose a Date of birth');
@@ -167,3 +171,7 @@ const Form = (props) => {
 };
 
 export default Form;
+
+Form.propTypes = {
+  setCurrentList: PropTypes.func.isRequired,
+};

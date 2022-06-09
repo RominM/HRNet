@@ -1,4 +1,4 @@
-export const emptyState = {
+export const initState = {
   firstName: '',
   lastName: '',
   startDate: new Date(),

@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 const Title = (props) => {
   return (
@@ -9,3 +10,7 @@ const Title = (props) => {
 };
 
 export default Title;
+
+Title.propTypes = {
+  title: PropTypes.string,
+};

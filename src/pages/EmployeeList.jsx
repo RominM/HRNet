@@ -1,4 +1,6 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
+
 import Title from '../components/Title';
 import Table from '../components/Table';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -22,3 +24,7 @@ const EmployeeList = (props) => {
 };
 
 export default EmployeeList;
+
+EmployeeList.propTypes = {
+  updateNewEmployee: PropTypes.array.isRequired,
+};

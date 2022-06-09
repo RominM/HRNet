@@ -1,4 +1,6 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
+
 import Title from '../components/Title';
 import Form from '../components/Form';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -22,3 +24,7 @@ const CreateEmployee = (props) => {
 };
 
 export default CreateEmployee;
+
+CreateEmployee.propTypes = {
+  setCurrentList: PropTypes.func.isRequired,
+};
