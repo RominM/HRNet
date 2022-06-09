@@ -142,10 +142,22 @@ const Form = (props) => {
         <legend>Address</legend>
         <div className="inputs">
           <label htmlFor="street">Street</label>
-          <input id="street" type="text" onChange={setValue} name="street" />
+          <input
+            id="street"
+            type="text"
+            onChange={setValue}
+            name="street"
+            required
+          />
 
           <label htmlFor="city">City</label>
-          <input id="city" type="text" onChange={setValue} name="city" />
+          <input
+            id="city"
+            type="text"
+            onChange={setValue}
+            name="city"
+            required
+          />
 
           <label htmlFor="stateChoice">State</label>
           <SelectOpt
@@ -160,6 +172,7 @@ const Form = (props) => {
             type="number"
             onChange={setValue}
             name="zipCode"
+            required
           />
         </div>
 
