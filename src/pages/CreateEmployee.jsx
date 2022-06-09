@@ -1,17 +1,23 @@
 import React from 'react';
 import Title from '../components/Title';
 import Form from '../components/Form';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const CreateEmployee = (props) => {
-  const setNewEmployee = props.setNewEmployee;
+  const addEmployee = props.setCurrentList;
 
   return (
-    <main className="container">
-      <section>
-        <Title title="Create Employee" />
-        <Form setNewEmployee={setNewEmployee} />
-      </section>
-    </main>
+    <HelmetProvider>
+      <Helmet>
+        <title>HRNet - Create Employee</title>
+      </Helmet>
+      <main className="container">
+        <section>
+          <Title title="Create Employee" />
+          <Form setCurrentList={addEmployee} />
+        </section>
+      </main>
+    </HelmetProvider>
   );
 };
 

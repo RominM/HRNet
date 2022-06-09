@@ -7,7 +7,7 @@ import SaveButton from './SaveButton';
 import SelectOpt from './SelectOpt';
 
 const Form = (props) => {
-  const setNewEmployee = props.setNewEmployee;
+  const addEmployee = props.setCurrentList;
   const emptyState = {
     firstName: '',
     lastName: '',
@@ -22,7 +22,6 @@ const Form = (props) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [state, setState] = useState(emptyState);
-
   const setValue = (args) => {
     const name = args.target ? args.target.name : args.name;
     const value = args.target ? args.target.value : args.value;
@@ -42,10 +41,7 @@ const Form = (props) => {
       state: state.state.label,
       zipCode: state.zipCode,
     };
-    document.getElementById('create-employee').reset();
-    setIsOpen(true);
-    setState(emptyState);
-    setNewEmployee(newState);
+    checkForm(newState);
   };
 
   const handleKeypress = (e) => {
@@ -54,10 +50,36 @@ const Form = (props) => {
     }
   };
 
+  const checkForm = (newState) => {
+    if (newState.firstName.length < 2) {
+      alert('Please entry a FirstName');
+    } else if (newState.lastName.length < 2) {
+      alert('Please entry a lastName');
+    } else if (newState.startDate == null) {
+      alert('Please entry a startDate');
+    } else if (newState.department == null) {
+      alert('Please entry a department');
+    } else if (newState.dateOfBirth == null) {
+      alert('Please entry a dateOfBirth');
+    } else if (newState.street.length < 2) {
+      alert('Please entry a street');
+    } else if (newState.city.length < 2) {
+      alert('Please entry a city');
+    } else if (newState.state == null) {
+      alert('Please entry a state');
+    } else if (newState.zipCode.length < 2) {
+      alert('Please entry a zipCode');
+    } else {
+      document.getElementById('create-employee').reset();
+      setIsOpen(true);
+      setState(emptyState);
+      addEmployee(newState);
+    }
+  };
   const textModal = 'Employee created !!';
 
   return (
-    <form action="/" id="create-employee">
+    <form action="#" method="GET" id="create-employee">
       <fieldset className="informations left-part">
         <legend>Informations</legend>
         <div className="inputs">
@@ -67,6 +89,7 @@ const Form = (props) => {
             id="first-name"
             onChange={setValue}
             name="firstName"
+            required
           />
 
           <label htmlFor="last-name">Last Name</label>
@@ -75,6 +98,7 @@ const Form = (props) => {
             type="text"
             id="last-name"
             name="lastName"
+            required
           />
 
           <label htmlFor="date-of-birth">Date of Birth</label>
@@ -87,6 +111,8 @@ const Form = (props) => {
             className="datepicker"
             id="date-of-birth"
             name="dateOfBirth"
+            calendarAriaLabel="date of birth calendar icon"
+            clearAriaLabel="date of birth clear icon"
           />
 
           <label htmlFor="start-date">Start Date</label>
@@ -99,6 +125,8 @@ const Form = (props) => {
             className="datepicker"
             id="start-date"
             name="startDate"
+            calendarAriaLabel="starte date calendar icon"
+            clearAriaLabel="starte date clear icon"
           />
 
           <label htmlFor="department">Department</label>
@@ -136,6 +164,7 @@ const Form = (props) => {
             name="zipCode"
           />
         </div>
+
         <SaveButton saveEmployee={saveEmployee} onKeypresse={handleKeypress} />
       </fieldset>
       <Modale content={textModal} trigger={isOpen} setTrigger={setIsOpen} />
