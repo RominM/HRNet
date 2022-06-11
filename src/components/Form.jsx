@@ -109,6 +109,7 @@ const Form = (props) => {
             className="datepicker"
             id="date-of-birth"
             name="dateOfBirth"
+            clearIcon={null}
             calendarAriaLabel="date of birth calendar icon"
             clearAriaLabel="date of birth clear icon"
           />
@@ -123,6 +124,7 @@ const Form = (props) => {
             className="datepicker"
             id="start-date"
             name="startDate"
+            clearIcon={null}
             calendarAriaLabel="starte date calendar icon"
             clearAriaLabel="starte date clear icon"
           />
