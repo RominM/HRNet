@@ -52,12 +52,10 @@ const Form = (props) => {
     } else if (newState.lastName.length < 2) {
       alert('Please entry a Last Name (min 2 lettres)');
     } else if (newState.startDate == null) {
-      /* Have to check the error when I use the cross */
       alert('Please choose a Start date');
     } else if (newState.department == null) {
       alert('Please select a Department');
     } else if (newState.dateOfBirth == null) {
-      /* Have to check the error when I use the cross */
       alert('Please choose a Date of birth');
     } else if (newState.street.length < 2) {
       alert('Please entry a Street (min 2 lettres)');
